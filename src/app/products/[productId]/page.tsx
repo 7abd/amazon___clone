@@ -5,7 +5,6 @@ import { useAuth } from "../../../../lib/context";
 import { productRating } from "../ruesableFunctions";
 import { Product } from "../../../../lib/types";
 export default function ProductDetail() {
-//const [product , setProduct] = useState<Product>({title:'',description:'',price:0,category:'',image_url:'',stock_quantity:0,rating:0,brand:''})
 const {products,addToCart} = useAuth();
 
   const {productId} = useParams();
