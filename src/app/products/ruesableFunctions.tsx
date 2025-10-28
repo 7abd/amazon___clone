@@ -2,7 +2,6 @@
 
 import { Product } from "../../../lib/types"
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import { useSearchParams } from "next/navigation";
 
 
 
@@ -17,10 +16,4 @@ import { useSearchParams } from "next/navigation";
 
 export function formatCurrency(priceCents:number) {
   return priceCents.toFixed(2);
-}
-
-export function useparam() {
-const categParams = useSearchParams()
-
-return categParams;
 }

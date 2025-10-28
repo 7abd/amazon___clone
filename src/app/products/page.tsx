@@ -7,13 +7,13 @@ import { Product } from "../../../lib/types";
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { productRating } from "./ruesableFunctions";
 import { formatCurrency } from "./ruesableFunctions";
-import { useparam } from "./ruesableFunctions";
+import Useparam from "@/components/useparam";
 type CartItem ={
     id: string | undefined;
     quantity:number;
 }
 export default function Products(): JSX.Element {
-  const categParams = useparam()
+  const categParams = Useparam()
 const category = categParams.get('categ')
   const {products,addToCart} = useAuth()
 const categorizedProducts = products?.filter(product => 
