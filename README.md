@@ -41,10 +41,10 @@ Feel free to reach out if you have questions or want to connect:
 
 ```bash
 # Clone this repo
-git clone https://github.com/7abd/amazon-clone.git
+git clone https://github.com/7abd/amazon___clone.git
 
-# Go into the project
-cd amazon-clone
+# Go into the project___
+cd amazon___clone
 
 # Install dependencies
 npm install
