@@ -37,6 +37,11 @@ Feel free to reach out if you have questions or want to connect:
 - [LinkedIn](https://www.linkedin.com/in/abdennour-darkaoui-2b2873356/)
 - [WhatsApp](https://wa.me/212708132603)
 - [abdobaouch996@gmail.com](mailto:abdobaouch996@gmail.com)
+
+## Preview
+
+![Screenshot](.\public\Screenshot.png)
+
 ##  Installation & Setup
 
 ```bash
