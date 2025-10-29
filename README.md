@@ -1,13 +1,16 @@
-# 🛒 Amazon Clone (Work in Progress)
+#  Amazon Clone (Work in Progress)
 
 A full-stack e-commerce web app inspired by **Amazon**, built from scratch with **Next.js, TypeScript, and Supabase**.  
 This project demonstrates authentication, product listings, cart management, and checkout flow — with a clean, responsive UI.
 
 ---
-
+ **Live Demo**: [amazon-clone-nnzm.vercel.app](https://amazon-clone-nnzm.vercel.app)
+  **linkdin profile** : [https://www.linkedin.com/in/abdennour-darkaoui-2b2873356/]
+   **whatsApp number** : [07 08 13 26 03]
+   **email** : [abdobaouch996@gmail.com]
 ## Features (so far)
 
-- Uer authentication (Supabase)  
+- User authentication (Supabase)  
 - Product listing with categories  
 - Shopping cart with total price calculation  
 - Checkout flow (basic version)  
