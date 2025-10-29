@@ -29,6 +29,14 @@ This project demonstrates authentication, product listings, cart management, and
 
 ---
 
+**Live Demo**: [amazon-clone-nnzm.vercel.app](https://amazon-clone-nnzm.vercel.app)
+## Contact
+
+Feel free to reach out if you have questions or want to connect:
+
+- [LinkedIn](https://www.linkedin.com/in/abdennour-darkaoui-2b2873356/)
+- [WhatsApp](https://wa.me/212708132603)
+- [abdobaouch996@gmail.com](mailto:abdobaouch996@gmail.com)
 ##  Installation & Setup
 
 ```bash
@@ -45,12 +53,4 @@ npm install
 npm run dev
 
 
-**Live Demo**: [amazon-clone-nnzm.vercel.app](https://amazon-clone-nnzm.vercel.app)
-## Contact
-
-Feel free to reach out if you have questions or want to connect:
-
-- [LinkedIn](https://www.linkedin.com/in/abdennour-darkaoui-2b2873356/)
-- [WhatsApp](https://wa.me/212708132603)
-- [abdobaouch996@gmail.com](mailto:abdobaouch996@gmail.com)
 
