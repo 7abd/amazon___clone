@@ -40,7 +40,7 @@ Feel free to reach out if you have questions or want to connect:
 
 ## Preview
 
-![Screenshot](.\public\Screenshot.png)
+![Screenshot](./Screenshot.png)
 
 ##  Installation & Setup
 
