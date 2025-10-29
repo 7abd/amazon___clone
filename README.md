@@ -4,10 +4,7 @@ A full-stack e-commerce web app inspired by **Amazon**, built from scratch with 
 This project demonstrates authentication, product listings, cart management, and checkout flow — with a clean, responsive UI.
 
 ---
- **Live Demo**: [amazon-clone-nnzm.vercel.app](https://amazon-clone-nnzm.vercel.app)
-  **linkdin profile** : [https://www.linkedin.com/in/abdennour-darkaoui-2b2873356/]
-   **whatsApp number** : [07 08 13 26 03]
-   **email** : [abdobaouch996@gmail.com]
+ 
 ## Features (so far)
 
 - User authentication (Supabase)  
@@ -46,3 +43,14 @@ npm install
 
 # Run the development server
 npm run dev
+
+
+**Live Demo**: [amazon-clone-nnzm.vercel.app](https://amazon-clone-nnzm.vercel.app)
+## Contact
+
+Feel free to reach out if you have questions or want to connect:
+
+- [LinkedIn](https://www.linkedin.com/in/abdennour-darkaoui-2b2873356/)
+- [WhatsApp](https://wa.me/212708132603)
+- [abdobaouch996@gmail.com](mailto:abdobaouch996@gmail.com)
+
