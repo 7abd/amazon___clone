@@ -2,12 +2,10 @@
 
 import { JSX, useEffect, useState } from "react"
 import Link from "next/link"
-import { supabase } from "../../lib/supabaseClient"
 import { useAuth } from "../../lib/context"
 
 export default function Header(): JSX.Element {
   const { user, cart } = useAuth()
-  const [isLangOpen, setIsLangOpen] = useState(false);
 const [selectedLang, setSelectedLang] = useState("EN");
 
   const [searchTerm, setSearchTerm] = useState('')
@@ -15,7 +13,7 @@ const [selectedLang, setSelectedLang] = useState("EN");
 
   const cartItemSum = cart.reduce((acc, item) => acc + item.quantity, 0)
 
-  const handleIputChanges = (e: any) => {
+  const handleIputChanges = (e:  React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value)
   }
 
