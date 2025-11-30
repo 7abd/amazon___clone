@@ -5,7 +5,6 @@ export async function seedProducts() {
   try {
     const response = await fetch("https://fakestoreapi.com/products");
     const products = await response.json();
- console.log(products)
     const insertPayload = products.map((p: Product) => ({
       title: p.title,
       description: p.description,

@@ -4,7 +4,6 @@ import { JSX } from "react";
 import Link from "next/link";
 import { useAuth } from "../../lib/context";
 import { Product } from "../../lib/types";
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { productRating } from "@/app/products/ruesableFunctions";
 import { useSearchParams } from "next/navigation";
 import { formatCurrency } from "@/app/products/ruesableFunctions";
@@ -13,19 +12,39 @@ type CartItem ={
     quantity:number;
 }
 export default function Products(): JSX.Element {
-const categParams = useSearchParams()
-const category = categParams.get('categ')
+const Params = useSearchParams()
+const categ= Params.get('categ')
+const searchTerm = Params.get('search')
+
   const {products,addToCart} = useAuth()
-const categorizedProducts = products?.filter(product => 
-  product.category === category
-)
-  return (
-    <div className="px-6 py-8">
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6 items-stretch">
- 
-        {categorizedProducts?.map((product, i) => (
-           
-      <div
+
+
+
+const categorizedProducts = categ
+  ? products?.filter(product => product.category === categ)
+  : [];
+
+const searchProducts = searchTerm
+  ? products?.filter(product =>
+      Object.values(product).some(value =>
+        String(value).toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    )
+  : [];
+
+
+const activeProducts =
+  searchProducts?.length
+    ? searchProducts
+    : categorizedProducts?.length
+      ? categorizedProducts
+      : products;
+
+
+const displayedProducts = (prods:any) => {
+
+ return ( prods?.map((product:Product, i:any) => (
+     <div
   key={i}
   className="
     h-full
@@ -61,10 +80,18 @@ const categorizedProducts = products?.filter(product =>
     Add to Cart
   </button>
 </div>
+  
+ )
+))
+}
 
-
+  return (
+    <div className="px-6 py-8">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6 items-stretch">
+ 
+        {displayedProducts(activeProducts)}
          
-        ))}
+        
       </div>
     </div>
   );

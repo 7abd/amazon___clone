@@ -1,16 +1,9 @@
 'use client'
 
-import Header from "@/components/header";
-import Navbar from "@/components/navbar";
-import Sidebar  from "@/components/sidbar";
 import Background from "@/components/background";
-import SubNav from "@/components/subNav";
-import Products from "@/app/products/page"
-import Link from "next/link";
 import { supabase } from "../../lib/supabaseClient";
-import { createContext,useState,useEffect, JSX } from "react";
+import {useState,useEffect, } from "react";
 import { Session } from '@supabase/supabase-js';
-import { AuthProvider } from "../../lib/context";
 export default function Home() {
 
 

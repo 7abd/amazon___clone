@@ -7,7 +7,6 @@ import Link from "next/link";
 export function CategoryGrid() {
   const { products } = useAuth()
 
-  // Group products by category
 
   const productImg = (img:string) => {
    const prod =   products?.find(product =>  product.image === img )
@@ -26,7 +25,6 @@ export function CategoryGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-5 ">
       {Object.entries(productThumbs).map(([category, images]) => {
-        // take up to 4 random images for this category
 
         const removeDuplicated = images.filter((img,index) => 
           images.indexOf(img) === index

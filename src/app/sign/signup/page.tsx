@@ -1,7 +1,7 @@
 'use client'
 
 
-import { useState, FormEvent, ChangeEvent, useEffect } from "react";
+import { useState } from "react";
 import { supabase } from "../../../../lib/supabaseClient";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -36,6 +36,7 @@ const router = useRouter();
     setErrorMsg("Password must contain a number or special character");
     return; 
   }
+  
 
   if (!userInfo.email.includes("@")) {
     setErrorMsg("Please enter a valid email");

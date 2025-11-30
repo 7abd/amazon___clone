@@ -13,7 +13,6 @@ const {products,addToCart} = useAuth();
   
   return (
     <main className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-      {/* Left Column: Image Gallery */}
       <section className="flex flex-col gap-4">
         <img
           src={matchingProduct?.image}
@@ -39,7 +38,6 @@ const {products,addToCart} = useAuth();
         </div>
       </section>
 
-      {/* Middle Column: Product Info */}
       <section className="flex flex-col gap-4">
         <h1 className="text-2xl font-semibold text-gray-900">
          {matchingProduct?.title}
@@ -58,7 +56,6 @@ const {products,addToCart} = useAuth();
        
       </section>
 
-      {/* Right Column: Buy Box */}
       <section className="border border-gray-300 rounded-xl p-4 shadow-md bg-white flex flex-col gap-4">
         <div className="text-2xl font-bold text-[#B12704]">{matchingProduct?.price}</div>
         <p className="text-green-700 text-sm font-semibold">

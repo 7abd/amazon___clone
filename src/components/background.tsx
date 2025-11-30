@@ -9,9 +9,6 @@ interface BackgroundProps {
 
 export default function Background({ children }: BackgroundProps): JSX.Element {
 
-  
- 
-    
 
   return (
     <>
@@ -25,18 +22,12 @@ export default function Background({ children }: BackgroundProps): JSX.Element {
       </div>
 
       <div className="relative -mt-48 z-10 ">
-
-       
         
              {Array.from({ length: 10 }).map((_, i) => (
                   
             <CategoryGrid key={i} />
            
           ))}
-
-
-       
-
       </div>
     </>
   );

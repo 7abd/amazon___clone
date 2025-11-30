@@ -3,6 +3,7 @@
 import { useAuth } from "../../../lib/context";
 import { formatCurrency } from "../products/ruesableFunctions";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function CheckoutPage() {
   const {cart,products,setCart} = useAuth();
@@ -85,10 +86,14 @@ const totalPrices = cartProducts?.reduce((acc,prod) =>
           <span>Total</span>
           <span>{totalPrices}</span>
         </div>
+    <Link
+  href="/checkout/checkoutProceed"
+  className="bg-[#FFD814] hover:bg-[#F7CA00] text-black rounded-lg py-2 font-semibold inline-block text-center
+"
+>
+  Proceed to Checkout
+</Link>
 
-        <button className="bg-[#FFD814] hover:bg-[#F7CA00] text-black rounded-lg py-2 font-semibold">
-          Proceed to Checkout
-        </button>
       </section>
     </main>
   );
