@@ -7,6 +7,7 @@ import { useAuth } from "../../lib/context"
 export default function Header(): JSX.Element {
   const { user, cart } = useAuth()
 const [selectedLang, setSelectedLang] = useState("EN");
+const [selected,setSelected] = useState('All')
 
   const [searchTerm, setSearchTerm] = useState('')
   const userFirstName = user?.name.trim().split(' ')[0]
@@ -25,7 +26,39 @@ const [selectedLang, setSelectedLang] = useState("EN");
   { code: "AR", label: "العربية", flag: "/ar-flag.png" },
 ];
 
-
+const amazonSearchOptions = [
+  "All Departments",
+  "Arts & Crafts",
+  "Automotive",
+  "Baby",
+  "Beauty & Personal Care",
+  "Books",
+  "CDs & Vinyl",
+  "Cell Phones & Accessories",
+  "Clothing, Shoes & Jewelry",
+  "Collectibles & Fine Art",
+  "Computers",
+  "Digital Music",
+  "Electronics",
+  "Garden & Outdoor",
+  "Grocery & Gourmet Food",
+  "Handmade",
+  "Health & Household",
+  "Home & Kitchen",
+  "Industrial & Scientific",
+  "Kindle Store",
+  "Luggage & Travel Gear",
+  "Movies & TV",
+  "Musical Instruments",
+  "Office Products",
+  "Pet Supplies",
+  "Prime Video",
+  "Software",
+  "Sports & Outdoors",
+  "Tools & Home Improvement",
+  "Toys & Games",
+  "Video Games"
+];
 
   return (
     <header className="
@@ -60,28 +93,44 @@ const [selectedLang, setSelectedLang] = useState("EN");
           order-3 md:order-none w-full md:w-auto
         "
       >
-        <button className="flex items-center gap-1 px-3 bg-[#f3f3f3] text-black rounded-l-md hover:bg-gray-200 transition text-xs sm:text-sm">
-          All <span className="text-xs">▼</span>
-        </button>
+     <div className="flex w-full max-w-[600px]">
+  <div className="relative text-black">
+    <select
+      defaultValue="All"
+      className="absolute inset-0 opacity-0 w-full h-full cursor-pointer"
+      onChange={(e) => setSelected(e.target.value)}
+    >
+      <option value="All">All</option>
+      {amazonSearchOptions.map((opt) => (
+        <option key={opt} value={opt}>
+          {opt}
+        </option>
+      ))}
+    </select>
 
-        <input
-          className="
-            flex-1 px-3 py-2 text-white bg-[#232f3e] placeholder-white focus:outline-none
-            text-xs sm:text-sm
-          "
-          placeholder="Search Amazon"
-          value={searchTerm}
-          onChange={handleIputChanges}
-        />
+    <div className="flex items-center px-3 bg-[#f3f3f3] rounded-l-md text-xs sm:text-sm hover:bg-gray-200 transition h-full min-w-[60px]">
+      {selected}
+    </div>
+  </div>
 
-        <Link
-          href={{ pathname: '/products', query: { search: searchTerm } }}
-          className="px-4 bg-[#febd69] rounded-r-md hover:bg-[#f3a847] flex items-center justify-center transition"
-        >
-          <div className="w-[20px] h-auto">
-            <img src="/search-icon.png" alt="Search" />
-          </div>
-        </Link>
+  {/* Input */}
+  <input
+    className="flex-1 px-3 py-2 text-white bg-[#232f3e] placeholder-white focus:outline-none text-xs sm:text-sm"
+    placeholder="Search Amazon"
+    value={searchTerm}
+    onChange={handleIputChanges}
+  />
+
+  {/* Search Button */}
+  <Link
+    href={{ pathname: '/products', query: { search: searchTerm } }}
+    className="px-4 bg-[#febd69] rounded-r-md hover:bg-[#f3a847] flex items-center justify-center transition"
+  >
+    <div className="w-[20px] h-auto">
+      <img src="/search-icon.png" alt="Search" />
+    </div>
+  </Link>
+</div>
       </form>
 
       {/* Right Section */}
@@ -89,9 +138,7 @@ const [selectedLang, setSelectedLang] = useState("EN");
         flex flex-row items-center gap-4 text-xs sm:text-sm
         min-w-fit
       ">
-        <div className="hidden sm:flex flex-row items-center gap-1 cursor-pointer relative">
-          
-
+       
      <div className="hidden sm:flex flex-row items-center gap-1 cursor-pointer relative">
   <img 
     src={languages.find(l => l.code === selectedLang)?.flag || "/us-flag.png"} 
@@ -114,9 +161,6 @@ const [selectedLang, setSelectedLang] = useState("EN");
     ))}
   </select>
 </div>
-
-
-           </div>
       
 
 
