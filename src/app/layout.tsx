@@ -1,6 +1,5 @@
 import "./globals.css";
 import Header from "@/components/header";
-import SubNav from "@/components/subNav";
 import { AuthProvider } from "../../lib/context";
 
 export default function RootLayout({

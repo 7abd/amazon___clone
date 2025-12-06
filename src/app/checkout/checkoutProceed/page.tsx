@@ -5,6 +5,7 @@ import {convertToSubcurrency} from '@/app/products/ruesableFunctions'
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 if (!process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY) {
   throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined");
@@ -13,7 +14,7 @@ if (!process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY) {
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
 
-export default function Home() {
+ function CheckoutWrapper() {
 
   const searchParams = useSearchParams();
 
@@ -45,5 +46,13 @@ export default function Home() {
         <CheckoutProceed amount={amount} />
       </Elements>
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading checkout...</div>}>
+      <CheckoutWrapper />
+    </Suspense>
   );
 }
