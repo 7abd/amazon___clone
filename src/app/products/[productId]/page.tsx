@@ -1,9 +1,8 @@
 'use client'
-import { useState } from "react";
 import { useParams } from "next/navigation";
 import { useAuth } from "../../../../lib/context";
 import { productRating } from "../ruesableFunctions";
-import { Product } from "../../../../lib/types";
+import Link from "next/link";
 export default function ProductDetail() {
 const {products,addToCart} = useAuth();
 
@@ -70,9 +69,16 @@ const {products,addToCart} = useAuth();
           Add to Cart
         </button>
 
-        <button className="bg-[#FFA41C] hover:bg-[#FA8900] text-black rounded-lg py-2 font-semibold">
-          Buy Now
-        </button>
+       
+              
+    <Link
+ href={{ pathname: "/checkout/checkoutProceed", query: { amount: matchingProduct?.price} }}
+ className="bg-[#fb9e09] hover:bg-[#f78000] text-black rounded-lg py-2 font-semibold inline-block text-center
+"
+>
+ Buy Now
+</Link>
+
 
         <p className="text-xs text-gray-500">
           Ships from and sold by

@@ -62,10 +62,11 @@ const amazonSearchOptions = [
 
   return (
     <header className="
-      font-light flex flex-row justify-between gap-4 bg-black text-white
-      fixed right-0 left-0 top-0 items-center px-4 py-2 shadow-md
+       font-light flex flex-row justify-between gap-4 bg-black text-white
+      fixed right-0 left-0 top-0 items-center px-6 py-4 shadow-md
       z-50
       flex-wrap md:flex-nowrap
+      
     ">
       {/* Left Section */}
       <div className="flex flex-row items-center gap-3 min-w-[150px]">

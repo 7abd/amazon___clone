@@ -13,7 +13,7 @@ export default function RootLayout({
       <body>
         <AuthProvider>
         <Header />
-        <SubNav />
+        
         <main>{children}</main>
         </AuthProvider>
 

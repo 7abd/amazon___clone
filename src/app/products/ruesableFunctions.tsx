@@ -1,7 +1,5 @@
 'use client'
 
-import { Product } from "../../../lib/types"
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 
 
@@ -14,6 +12,17 @@ import { createContext, useContext, useEffect, useState, ReactNode } from "react
   return `/rating/rating-${ratingKey}.png`;
 };
 
-export function formatCurrency(priceCents:number) {
-  return priceCents.toFixed(2);
+
+
+
+
+export function formatCurrency(priceCents:number | undefined) {
+  return priceCents?.toFixed(2);
+}
+
+
+
+export function convertToSubcurrency(amount: number | undefined, factor = 100) {
+  if(amount)  return Math.round(amount * factor);
+
 }

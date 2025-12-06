@@ -2,7 +2,6 @@
 
 import { useAuth } from "../../../lib/context";
 import { formatCurrency } from "../products/ruesableFunctions";
-import { useState } from "react";
 import Link from "next/link";
 
 export default function CheckoutPage() {
@@ -75,8 +74,8 @@ const totalPrices = cartProducts?.reduce((acc,prod) =>
       <section className="border border-gray-300 rounded-xl p-4 shadow-md h-fit bg-white flex flex-col gap-4">
         <h2 className="text-lg font-semibold">Order Summary</h2>
         <div className="flex justify-between text-sm">
-          <span>Subtotal (2 items)</span>
-          <span> {totalPrices}</span>
+          <span>Subtotal</span>
+          <span> {formatCurrency(totalPrices)}</span>
         </div>
         <div className="flex justify-between text-sm">
           <span>Shipping</span>
@@ -84,10 +83,10 @@ const totalPrices = cartProducts?.reduce((acc,prod) =>
         </div>
         <div className="border-t pt-2 flex justify-between text-lg font-bold">
           <span>Total</span>
-          <span>{totalPrices}</span>
+          <span>{formatCurrency(totalPrices)}</span>
         </div>
     <Link
-  href="/checkout/checkoutProceed"
+ href={{ pathname: "/checkout/checkoutProceed", query: { amount: totalPrices } }}
   className="bg-[#FFD814] hover:bg-[#F7CA00] text-black rounded-lg py-2 font-semibold inline-block text-center
 "
 >
