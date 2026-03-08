@@ -19,7 +19,7 @@ const router = useRouter();
     const { name, value } = e.target;
   setUserInfo((prev) => ({ ...prev, [name]: value }));
   };
- console.log(userInfo)
+ 
 
  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
@@ -43,7 +43,7 @@ const router = useRouter();
     return; 
   }
 
-    const {error,data} = await  supabase.from('users')
+    const {error} = await  supabase.from('users')
   .insert({name:userInfo.name,phone:userInfo.phone ,
      address:userInfo.address, email:userInfo.email})
 
@@ -53,7 +53,7 @@ const router = useRouter();
   } 
 
 
-const {error:authError,data:authData} = await supabase.auth.
+const {error:authError} = await supabase.auth.
 signUp({email:userInfo.email,password:userInfo.password})
 if(authError) {
   setErrorMsg(`authentication error: ${authError.message}`)
@@ -141,10 +141,8 @@ if(authError) {
           className="w-full border border-gray-400 rounded-md px-3 py-2 mb-6 focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Confirm password"
         />
-         {/* error msg*/} 
 
       {errorMsg && <p className="text-red-600 text-sm mb-4">{errorMsg}</p>}
-        {/* Sign Up Button */}
 
           
           <button type="submit" className="w-full bg-[#FFD814] hover:bg-[#F7CA00] text-black rounded-lg py-2 font-semibold mb-6">
