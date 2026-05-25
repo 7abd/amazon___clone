@@ -180,7 +180,7 @@ npm run lint
 
 This project is deployed on **[Vercel](https://vercel.com/)**.
 
-**Live Demo**: [amazon-clone-nnzm.vercel.app](https://amazon-clone-nnzm.vercel.app)
+**Live Demo**: [amazon-clone-nnzm.vercel.app](https://amazon-clone-4eab.vercel.app/)
 
 ---
 
